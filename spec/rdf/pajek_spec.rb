@@ -3,13 +3,12 @@ require 'spec_helper'
 describe RDF::Pajek do
   describe 'versioning' do
     let(:semver_regex) do
-      %r{
-        ^(?:0|[1-9]\d*)\.(?:0|[1-9]\d*)\.(?:0|[1-9]\d*) 
-        (?:-[\da-z\-]+(?:\.[\da-z\-]+)*)?
-        (?:-[\da-z\-]+(?:\.[\da-z\-]+)*)?$
-      }x
-    end   
-    
+      /^(?:0|[1-9]\d*)\.(?:0|[1-9]\d*)\.(?:0|[1-9]\d*)
+       (?:-[\da-z\-]+(?:\.[\da-z\-]+)*)?
+       (?:-[\da-z\-]+(?:\.[\da-z\-]+)*)?$
+      /x
+    end
+
     it 'has a version' do
       expect(described_class::VERSION).to match semver_regex
     end
@@ -26,5 +25,3 @@ describe RDF::Pajek do
     end
   end
 end
-
-
